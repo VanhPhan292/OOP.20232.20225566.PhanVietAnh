@@ -10,7 +10,7 @@ public class DigitalVideoDisc {
 		return directory;
 	}
 	public int getLenght() {
-		return lenght;
+		return length;
 	}
 	public float getCost() {
 		return cost;
@@ -18,8 +18,13 @@ public class DigitalVideoDisc {
 	private String title;
 	private String category;
 	private String directory;
-	private int lenght;
+	private int length;
 	private float cost;
+	public DigitalVideoDisc(String title) {
+		super();
+		this.title = title;
+	}
+	
 
 }
 	
