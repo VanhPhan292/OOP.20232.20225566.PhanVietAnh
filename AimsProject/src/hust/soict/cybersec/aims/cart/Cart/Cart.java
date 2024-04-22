@@ -1,3 +1,6 @@
+package hust.soict.cybersec.aims.cart.Cart;
+import hust.soict.cybersec.aims.disc.DigitalVideoDisc.*;
+import java.util.*;
 
 public class Cart {
 	public static final int MAX_NUMBERS_ORDERED = 20;
@@ -64,4 +67,6 @@ public class Cart {
     	}
     	System.out.printf("         Total Cost:               %.2f\n", this.totalCost());
     }
+    
+    
 }

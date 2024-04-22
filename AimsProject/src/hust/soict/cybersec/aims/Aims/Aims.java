@@ -1,3 +1,7 @@
+package hust.soict.cybersec.aims.Aims;
+
+import hust.soict.cybersec.aims.disc.DigitalVideoDisc.*;
+import hust.soict.cybersec.aims.cart.Cart.*;
 
 public class Aims {
 	public static void main(String[]args) {
@@ -18,3 +22,4 @@ public class Aims {
 		anOrder.displayCartItems();
 }
 }
+
