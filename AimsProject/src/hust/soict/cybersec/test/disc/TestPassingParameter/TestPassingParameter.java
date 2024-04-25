@@ -7,9 +7,9 @@ import hust.soict.cybersec.aims.disc.DigitalVideoDisc.*;
 public class TestPassingParameter {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		DigitalVideoDisc jungleDVD = new DigitalVideoDisc("Jungle");
-		DigitalVideoDisc cinderellaDVD = new DigitalVideoDisc("Cindrella");
+		
+		DigitalVideoDisc jungleDVD = new DigitalVideoDisc("Jungle", null, null);
+		DigitalVideoDisc cinderellaDVD = new DigitalVideoDisc("Cindrella", null, null);
 		
 		swap(jungleDVD,cinderellaDVD);
 		System.out.println("jungle dvd title: " + jungleDVD.getTitle());
@@ -27,6 +27,6 @@ public class TestPassingParameter {
 	public static void changeTitle(DigitalVideoDisc dvd, String title) {
 		String oldTitle = dvd.getTitle();
 		dvd.setTitle(title);
-		dvd = new DigitalVideoDisc(oldTitle);
+		dvd = new DigitalVideoDisc(oldTitle, oldTitle, oldTitle);
 	}
 }

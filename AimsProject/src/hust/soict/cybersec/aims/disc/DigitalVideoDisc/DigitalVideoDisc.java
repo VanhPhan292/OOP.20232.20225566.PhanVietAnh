@@ -1,27 +1,14 @@
 package hust.soict.cybersec.aims.disc.DigitalVideoDisc;
 
+import hust.soict.cybersec.aims.media.Disc;
+import hust.soict.cybersec.aims.media.Playable;
 
-public class DigitalVideoDisc {
+public class DigitalVideoDisc extends Disc implements Playable  {
+	public DigitalVideoDisc(int id, String title, String category, float cost, int length, String director) {
+        super(id, title, category, cost, length, director);
+    }
 
-	public DigitalVideoDisc(String title, String category, float cost) {
-		super();
-		this.nbDigitalVideoDiscs ++;
-		this.id = this.nbDigitalVideoDiscs;
-		this.title = title;
-		this.category = category;
-		this.cost = cost;
-	}
-
-	public DigitalVideoDisc(String title, String category, String director, int length, float cost) {
-		super();
-		this.nbDigitalVideoDiscs ++;
-		this.id = this.nbDigitalVideoDiscs;
-		this.title = title;
-		this.category = category;
-		this.director = director;
-		this.length = length;
-		this.cost = cost;
-	}
+	
 	
 	public String getTitle() {
 		return title;
@@ -55,15 +42,19 @@ public class DigitalVideoDisc {
 	public void setTitle(String title) {
 		this.title = title;
 	}
-	public DigitalVideoDisc(String title) {
-		super();
-		this.title = title;
-	}
+	
 	public String toString() {
 		return "DVD - " + title+ " - " + category+ " - "+ director+" - " + length+ " : "+ cost+"$";
 	}
+	public boolean isMatch(String title) {
+        return this.title.equalsIgnoreCase(title);
+    }
+	@Override
+    public void play() {
+        System.out.println("Playing DVD: " + this.getTitle());
+        System.out.println("DVD length: " + this.getLength());
+    }
 
-	
 	
 	
 }
