@@ -1,0 +1,13 @@
+
+Advantages of Polymorphism:
+Code Reusability
+Flexibility
+Extensibility
+Abstraction
+
+Inheritance and Polymorphism:
+Inheritance is a mechanism where you can derive a class from another class for a hierarchy of classes that share a set of attributes and methods.
+
+Differences between Polymorphism and Inheritance:
+Inheritance is a mechanism that allows one class to acquire the properties (fields) and behaviors (methods) of another class.
+Polymorphism, on the other hand, allows us to perform a single action in different ways. It provides the ability to a message to be displayed in more than one form. 
