@@ -1,6 +1,7 @@
 package hust.soict.cybersec.aims.media;
 import java.util.ArrayList;
 import java.util.Comparator;
+import java.util.Scanner;
 
 
 public abstract class Media {
@@ -42,20 +43,20 @@ public abstract class Media {
 
 
 
-@Override
-public boolean equals(Object obj) {
-    if (this == obj) {
-        return true;
-    }
-    if (obj == null || getClass() != obj.getClass()) {
-        return false;
-    }
-    Media media = (Media) obj;
-    return title.equals(media.title);
-}
+    public boolean isMatch(String title) {
+		return this.getTitle().equalsIgnoreCase(title);
+	}
+	
+	public boolean equals(Media media) {
+		if(this.getTitle().equals(media.getTitle())) {
+			return true;
+		}
+		return false;
+	}
+
 @Override
 public String toString() {
-    return "Media [id=" + id + ", title=" + title + ", category=" + category + ", cost=" + cost + "]";
+    return "Media - " + id + " - " + title + " - " + category + " - " + cost +"$";
 }
 
 public static Comparator<Media> MediaTitleComparator = new Comparator<Media>() {
@@ -77,8 +78,6 @@ public static Comparator<Media> MediaCostComparator = new Comparator<Media>() {
        return Float.compare(mediaCost2, mediaCost1);
     }
 };
-
-
 }
 
 

@@ -8,8 +8,8 @@ public class TestPassingParameter {
 
 	public static void main(String[] args) {
 		
-		DigitalVideoDisc jungleDVD = new DigitalVideoDisc("Jungle", null, null);
-		DigitalVideoDisc cinderellaDVD = new DigitalVideoDisc("Cindrella", null, null);
+		DigitalVideoDisc jungleDVD = new DigitalVideoDisc(0, "Jungle", null, null, 0, 0);
+		DigitalVideoDisc cinderellaDVD = new DigitalVideoDisc(0, "Cindrella", null, null, 0, 0);
 		
 		swap(jungleDVD,cinderellaDVD);
 		System.out.println("jungle dvd title: " + jungleDVD.getTitle());
@@ -27,6 +27,6 @@ public class TestPassingParameter {
 	public static void changeTitle(DigitalVideoDisc dvd, String title) {
 		String oldTitle = dvd.getTitle();
 		dvd.setTitle(title);
-		dvd = new DigitalVideoDisc(oldTitle, oldTitle, oldTitle);
+		dvd = new DigitalVideoDisc(0, oldTitle, oldTitle, oldTitle, 0, 0);
 	}
 }
