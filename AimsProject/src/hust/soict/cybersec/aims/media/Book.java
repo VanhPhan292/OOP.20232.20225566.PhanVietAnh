@@ -13,10 +13,11 @@ public class Book extends Media{
     public void removeAuthor(String authorName) {
         authors.remove(authorName);
     }
-    public Book(int id, String title, String category, float cost, ArrayList<String> authors) {
-        super(id, title, category, cost);
-        this.authors = authors;
-    }
+    
+
+	public Book(int id, String title, String category, float cost) {
+		super(id,title,category,cost);
+	}
 
 
 }

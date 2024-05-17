@@ -30,6 +30,7 @@ public class NumberGrid extends JFrame {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setSize(200, 200);
         setTitle("Number Grid");
+        setVisible(true);
     }
     void addButtons(JPanel panelButtons) {
     	ButtonListener btnListener = new ButtonListener();
@@ -66,6 +67,7 @@ public class NumberGrid extends JFrame {
         }
     }
   }
+    
 }
 
 
