@@ -3,9 +3,24 @@ import hust.soict.cybersec.aims.media.Media;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+import javafx.collections.transformation.FilteredList;
+import javax.naming.LimitExceededException;
 
 public class Cart {
     private ArrayList<Media> itemsOrdered = new ArrayList<>();
+    
+    private ObservableList<Media> orderedItems = FXCollections.observableArrayList();
+	
+	public ObservableList<Media> getItemsOrdered() {
+		return orderedItems;
+	}
+	
+	public FilteredList<Media> getFilteredItems() {
+        return new FilteredList<>(orderedItems, p -> true);
+    }
+	
 
     public boolean addMedia(Media media) {
 		if(itemsOrdered.contains(media)) {

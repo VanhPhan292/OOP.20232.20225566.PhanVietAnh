@@ -47,12 +47,15 @@ public abstract class Media {
 		return this.getTitle().equalsIgnoreCase(title);
 	}
 	
-	public boolean equals(Media media) {
-		if(this.getTitle().equals(media.getTitle())) {
-			return true;
-		}
-		return false;
-	}
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true; // Checks if both references point to the same object
+        if (obj == null || getClass() != obj.getClass()) return false; // Checks for null and class type
+
+        Media media = (Media) obj;
+
+        return Double.compare(media.cost, cost) == 0 && title.equalsIgnoreCase(media.title);
+    }
 
 @Override
 public String toString() {
@@ -68,6 +71,19 @@ public static Comparator<Media> MediaTitleComparator = new Comparator<Media>() {
        return mediaTitle1.compareTo(mediaTitle2);
     }
 };
+
+public int compareTo(Media other) {
+    if (other == null) throw new NullPointerException("Comparing media with null");
+
+    
+    int titleComparison = this.title.compareToIgnoreCase(other.title);
+    if (titleComparison != 0) {
+        return titleComparison;
+    }
+
+    
+    return Double.compare(this.cost, other.cost);
+}
 
 public static Comparator<Media> MediaCostComparator = new Comparator<Media>() {
     public int compare(Media m1, Media m2) {

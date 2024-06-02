@@ -1,6 +1,9 @@
 package hust.soict.cybersec.aims.media;
 
 import java.util.ArrayList;
+import java.util.Iterator;
+
+import hust.soict.cybersec.aims.exception.PlayerException;
 
 public class CompactDisc extends Disc implements Playable{
     private String artist;
@@ -53,14 +56,24 @@ public class CompactDisc extends Disc implements Playable{
         }
         return totalLength;
     }
+    
     @Override
-    public void play() {
-        System.out.println("Playing CD: " + this.getTitle());
-        System.out.println("CD length: " + this.getLength());
-        for (Track track : tracks) {
-            track.play();
+    public void play() throws PlayerException {
+        if (this.getLength() <= 0) {
+            System.err.println("ERROR: CD length is non-positive");
+            throw new PlayerException("CD length is non-positive");
+        }
+
+        Iterator<Track> iter = tracks.iterator();
+        while (iter.hasNext()) {
+            Track nextTrack = iter.next();
+            try {
+                nextTrack.play();
+            } catch (PlayerException e) {
+                System.err.println("ERROR: Cannot play track: " + nextTrack.getTitle());
+                throw e;
+            }
         }
     }
-
    
 }
