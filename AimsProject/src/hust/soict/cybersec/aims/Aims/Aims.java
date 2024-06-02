@@ -4,10 +4,13 @@ package hust.soict.cybersec.aims.Aims;
 import hust.soict.cybersec.aims.store.Store;
 import hust.soict.cybersec.aims.cart.Cart.*;
 import hust.soict.cybersec.aims.disc.DigitalVideoDisc.DigitalVideoDisc;
+import hust.soict.cybersec.aims.exception.PlayerException;
 import hust.soict.cybersec.aims.media.Book;
 import hust.soict.cybersec.aims.media.CompactDisc;
 import hust.soict.cybersec.aims.media.Media;
 import java.util.Scanner;
+
+import javax.naming.LimitExceededException;
 
 public class Aims{
 	public static void showMenu() {
@@ -74,7 +77,7 @@ public class Aims{
 		System.out.println("Please choose a number 1-2");
 	}
 	
-	public static void main(String[] args) {
+	public static void main(String[] args)throws LimitExceededException, PlayerException {
 		Store store = new Store();
 		Cart cart = new Cart();
 		Scanner keyboard = new Scanner(System.in);
